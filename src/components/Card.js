@@ -3,55 +3,43 @@ import styled from 'styled-components'
 import AudioPlayer from './AudioPlayer'
 import Like from './Like.js'
 import UnLike from './UnLike'
-import { Link } from 'react-router-dom';
 
-const Card = ({music,add}) => {
-   
-    
-    const fmtMSS=(s)=>{return(s-(s%=60))/60+(9<s?':':':0')+s}
+const Card = ({ music, add }) => {
+
+    const fmtMSS = (s) => { return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s }
 
     return (
         <CardWrapper >
             <div className="card-header">
             </div>
             <div className="card-actions">
-             
+
             </div>
 
             <div className="card-body">
-            <div className="card-img-box">
-                <img src={music.album.cover_medium} alt="" />
-            </div>
-            
-              <div className="info">
-                  <div className='title'>{music.title}
-                  {/* https://www.deezer.com/br/track/3135556 */}
+                <div className="card-img-box">
+                    <img src={music.album.cover_medium} alt="" />
+                </div>
 
-                  <div className="deezer-link" >
-                
-                
-                  <Link title='ouvir no Deezer' to={{ pathname: `https://www.deezer.com/br/track/${music.id}` }} target="_blank" ><i className="deezer-link fa fa-headphones" ></i></Link>
-                  </div>
-                  {/* DINAMICO */}
-                  {
-                      add===true ?<Like  music={music} /> : <UnLike music={music} />
-                  }
-                  
-                  </div>
-                  <span>{music.artist.name}</span>
-                  <span>{fmtMSS(music.duration)}</span>
-                 
-              </div>
+                <div className="info">
+                    <div className='title'>{music.title}
+                        <div className="deezer-link" >
+                            <a title='ouvir no Deezer' href={`https://www.deezer.com/br/track/${music.id}`} target="_blank" ><i className="fa fa-link"></i></a>
+                        </div>
+                        {
+                            add === true ? <Like music={music} /> : <UnLike music={music} />
+                        }
+                    </div>
+                    <span>{music.artist.name}</span>
+                    <span>{fmtMSS(music.duration)}</span>
+                </div>
             </div>
             <div className="card-footer">
-             <AudioPlayer  track={music.preview}/>
-
-             <div className="action-bar">
-                 
+                <AudioPlayer track={music.preview} />
+                <div className="action-bar">
+                </div>
             </div>
 
-            </div>
-           
         </CardWrapper>
     )
 }
@@ -70,6 +58,7 @@ overflow: hidden;
 .info{
     padding: 5px 10px;
     vertical-align: center;
+    
     span{
         color:gray;
         padding: 0px 5px;
@@ -89,9 +78,12 @@ overflow: hidden;
 .deezer-link{
     margin-left:auto;
     margin-right:10px;
-    color:#fff;
+    color:#ffffff;
 }
 
+.deezer-link a {
+    color: #fff
+}
 
 .card-img-box {
     padding: 0;
@@ -120,9 +112,6 @@ audio{
         padding-right:20px;
     }
 }
-
-
-
 `
 
 export default Card

@@ -3,7 +3,7 @@ import spinner from '../assets/spin.gif'
 const Spinner = () => {
     return (
         <div>
-            <img src={spinner} width='300' alt='spinner' />
+            <img src={spinner} width='700' alt='spinner' />
         </div>
     )
 }

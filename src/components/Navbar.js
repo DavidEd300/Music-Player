@@ -5,14 +5,10 @@ import { useSelector} from 'react-redux'
 
 const Navbar = () => {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-   const mylist = useSelector(store=>store.mylist);
-                                                                                                                                                                                                                                                                                                                                                           
+   const mylist = useSelector(store=>store.mylist);                                                                                                                                                                                                                                                                                                                                                   
     return (
         <NavbarWrapper>
           <Link className='logo' to='/' ><i title='Voltar para Início' className="fa fa-home fa-2x " aria-hidden="true"></i></Link>
-
-           
-
            <div className="lista" title='Minha Lista'>
            <Link to='/lista' ><i className="fa-lista fa fa-music " aria-hidden="true"></i></Link>
            <div className='count'>{mylist.length}</div>
@@ -50,19 +46,14 @@ padding: 12px 30px;
     padding: 10px 180px ;
 }
 
-
-/* margin-bottom: 5px; */
 background-color: #232f3e;
 background-color: #131921;
 
 
 .logo{
-    /* margin-left:105px; */
     color:#fff;
     justify-self: start;
 }
-
-
 
 .lista{
     position: relative;
@@ -71,8 +62,6 @@ background-color: #131921;
         color:#fff;
         font-size: 26px;
         position:relative;
-
-    
     }
     .count{
         background-color: royalblue;
@@ -88,8 +77,6 @@ background-color: #131921;
         width:15px;
         height: 15px;
     }
-
 }
-
 `
 export default Navbar

@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import { addToList } from '../redux/ducks/music';
 
 
+
 const Like = ({music}) => {
 
  
@@ -30,5 +31,3 @@ const Like = ({music}) => {
 }
 
 export default Like
-
-
