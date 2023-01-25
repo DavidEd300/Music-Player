@@ -219,7 +219,7 @@ margin-bottom:70px;
   margin-top: -160px;
   font-family: Arial, Helvetica, sans-serif;
   background: #2980b9;
-  padding: 10px 20px;
+  padding: 7px;
   border-radius: 4px;
   border: solid 1px #2980b9;
   color: #fff;

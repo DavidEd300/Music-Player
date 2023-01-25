@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-const AudioPlayer = ({track,setIsPlaying}) => {
+const AudioPlayer = ({track}) => {
     return (
         <AudioWrapper className="audio-payler">
         <audio controls >
